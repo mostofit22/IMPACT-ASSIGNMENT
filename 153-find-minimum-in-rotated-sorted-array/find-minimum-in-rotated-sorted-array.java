@@ -1,21 +1,25 @@
 class Solution {
-    public int findMin(int[] nums) {
-        int left = 0, right = nums.length - 1;
+    public int findMin(int[] arr) {
+        int n = arr.length ;
+        int start = 0;
+        int end = n - 1;
 
-        while (left < right) {
-            int mid = left + (right - left) / 2;
+        while (start < end) {
+            int mid = (start + end)/ 2;
 
-            // Minimum is in the right half
-            if (nums[mid] > nums[right]) {
-                left = mid + 1;
+            // Minimum is in the right half 
+            if (arr[mid] > arr[end]) {
+                start = mid + 1; //
             }
-            // Minimum is in the left half or at mid
+            // min  is in the left half or at mid?
             else {
-                right = mid;
+                end = mid;
             }
         }
-
-        // Left will point to the minimum element
-        return nums[left];
+        return arr[start];
     }
 }
+
+//start =0 end =2 
+//4+6/2 = 10/2 5 so mid is ele 1 
+// mid > end?? 1>2 ? no. end = mid . 
