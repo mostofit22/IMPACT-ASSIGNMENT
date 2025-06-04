@@ -15,18 +15,11 @@ class Solution {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode prev = null;
-        ListNode curr = head ;
-        while(curr != null)
-        {
-            ListNode Next = curr.next ; //store add 
-            curr.next = prev ;//flip 
-            prev = curr ;
-            curr = Next ;
-
-
-        }
-        return prev;
+        ListNode newHead = reverseList(head.next);
+        ListNode temp = head.next;
+        head.next = null;
+        temp.next = head ;
+        return newHead;
         
     }
 }
