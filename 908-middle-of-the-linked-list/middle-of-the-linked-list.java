@@ -9,6 +9,7 @@
  * }
  */
 
+//using slow and fast 
 class Solution {
     public ListNode middleNode(ListNode head) {
         
