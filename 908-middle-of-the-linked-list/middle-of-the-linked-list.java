@@ -11,19 +11,14 @@
 
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode temp = head;
-        int count = 0;
-        while (temp != null) {
-            temp = temp.next;
-            count++;
+        
+        ListNode slow = head ;
+        ListNode fast = head ;
+        while(fast != null && fast.next != null)
+        {
+            fast = fast.next.next ;
+            slow = slow.next ;
         }
-        //if count = 6
-        int idx = count / 2; //idx will be 3 
-        temp = head;
-        for (int i = 0; i < idx; i++) {
-            temp = temp.next;
-        }
-        //traverse 3 times 
-        return temp;  
+        return slow;
     }
 }
